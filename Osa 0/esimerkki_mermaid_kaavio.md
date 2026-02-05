@@ -3,9 +3,13 @@
 
 Alla on esimerkki mermaid kaaviossa tapahtumasarjalle, kun avaat osoitteen https://studies.cs.helsinki.fi/exampleapp/notes Sinun kannattaa avata selaimessa kehittäjän työkaluista network-välilehti ja katsoa, mitä tapahtuu, kun päivität kyseisen sivun. Vertaa network-välilehdellä näkyviä tapahtumia alla olevaan kaavioon.
 
-Pystyt tarkastelemaan kaaviota asentamalla visual studio codeen extensionin "Markdown Preview Mermaid". Kun olet asentanut extensionin, paina ctrl+shift+P ja kirjoita ylös aukeavaan hakuun "Markdown". Valitse listasta "Markdown: Open preview"
+Pystyt tarkastelemaan kaaviota visual studio codessa asentamalla visual studio codeen extensionin "Markdown Preview Mermaid". Kun olet asentanut extensionin, paina ctrl+shift+P ja kirjoita ylös aukeavaan hakuun "Markdown". Valitse listasta "Markdown: Open preview".
 
+Githubissa tämä tiedosto näkyy valmiiksi "renderöitynä" Voit katsoa koodi versiota, vaihtamalla näkymän "code" vaihtoehtoon.
 
+![Vaihda koodiin](./src/vaihda_koodiin_githubissa.png)
+
+## Kaavio:
 
 ```mermaid
 sequenceDiagram
