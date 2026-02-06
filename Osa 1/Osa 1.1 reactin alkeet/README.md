@@ -36,7 +36,62 @@ Tämän osion tehtäviin on valmiit pohjat kansioissa *helloWorld* ja *kurssitie
     - Muista myös pushata muutokset, jotta ne tulevat näkyviin githubiin!
 
 
-### Tehtävä 1.3
+### Tehtävä 1.3 Kurssitiedot osa 1
+Tässä tehtävässä refaktoroidaan koodia. Refaktorointi tarkoittaa koodin muokkaamista ilman, että toiminnallisuus muuttuu. Tämä voi tarkoittaa esimerkiksi ison komponentin jakamista useiksi pieniksi komponenteiksi. 
+
+Tehtävät tehdään *Osa 1.1 reactin alkeet*-kansiosta valmiiksi löytyvään *kurssitiedot* sovellukseen.
+
+**App.jsx**-tiedostosta löytyy *App*-komponentti, jossa on tallennettu muuttujiin kurssiin liittyviä tietoja. Kurssin tiedot renderöidään tällä hetkellä suoraan *App*-komponentissa. Tehtävän tavoitteena on siirtää renderöinti *App*-komponentista uusiin pienempiin komponentteihin. Alla näkyy vasemmalla *App*-komponentin tämän hetkinen palautettava jsx-koodi, ja oikealla, miltä sen tulee näyttää tehtävän jälkeen:
+
+<table>
+<tr>
+<td>
+
+```jsx
+return (
+  <div>
+    <h1>{course}</h1>
+    <Part part={part1} exercises={exercises1} />
+    <p>
+      {part2} {exercises2}
+    </p>
+    <p>
+      {part3} {exercises3}
+    </p>
+    <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+  </div>
+)
+```
+
+</td>
+<td>
+
+```jsx
+return (
+  <div>
+    <Header course={course} />
+    <Part ... />
+    <Part ... />
+    <Part ... />
+    <Total ... />
+  </div>
+)
+```
+
+</td>
+</tr>
+</table>
+
+Huomaa, että esimerkkikoodin kolme pistettä tarkoittavat, että niiden paikalle tulee jotain koodia. Älä siis itse laita koodiisi kolmea pistettä, tai kopioi esimerkkiä suoraan omaan koodiisi!
+
+Samasta tiedostosta löytyy myös sinulle valmiiksi tehty *Part*-komponentti, jota käytetään jo yhden kurssin osan renderöintiin.
 
 
-### Tehtävä 1.4
+1. Sammuta *helloWorld*-sovellus ja käynnistä *kurssitiedot*. Varmista, että *kurssitiedot*-sovellus näkyy selaimessa. Pidä selaimen konsoli auki koko ajan.
+2. Aloita muuttamalla myös kahden muun kurssin osan renderöinti *Part*-komponenttiin. Katso mallia valmiiksi tehdystä osasta. Varmista, että sivu näyttää selaimessa täysin samalta kuin aiemmin, ja ettei konsolissa näy virheitä.
+3. Tee samaan tiedostoon uusi komponentti *Header*, joka ottaa yhden propsin *course*. Komponentin tulee renderöidä *course*-propsin sisältö h1-elementtiin. Muuta *App*-komponenttia siten, että kurssin nimen renderöinti tehdään *Header*-komponentin avulla. Varmista, että sivu näyttää selaimessa täysin samalta kuin aiemmin, ja ettei konsolissa näy virheitä.
+4. Tee samaan tiedostoon uusi komponentti *Total*, joka ottaa yhden propsin *total*. Komponentin tulee renderöidä p-elementissä teksti "Number of exercises" sekä *total*-propsin arvo. Muuta *App*-komponenttia siten, että tehtävien kokonaismäärä renderöidään *Total*-komponentin avulla. Varmista, että sivu näyttää selaimessa täysin samalta kuin aiemmin, ja ettei konsolissa näy virheitä.
+5. Tarkista, että *App*-komponenttisi näyttää samalta kuin ylempänä oleva malli. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 1.3
+
+
+### Tehtävä 1.4 Kurssitiedot osa 2
