@@ -1,1 +1,1 @@
-# omnia-fullstack-teht-v-t
+# Omnia fullstack tehtävät
