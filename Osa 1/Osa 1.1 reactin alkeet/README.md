@@ -2,7 +2,7 @@
 ## Reactin alkeet
 Tämän osion tehtävissä harjoitellaan aivan reactin alkeita ja opitaan, mitä komponentit ovat. Aloita tutustumalla *esimerkkiProjekti*-kansiosta löytyvään esimerkkiin. Käynnistä esimerkki projekti ja kokeile muuttaa koodia. Pidä koko ajan auki sekä koodieditori, että selain, jossa on myös konsoli avoinna. Tarkastele, miten koodimuutokset vaikuttavat näkyvät selaimessa avatussa sovelluksessa.
 
-Varmista, että ymmärrät seuraavat käsitteeet ja miten niitä käytetään: *komponentti*, *props*, *console.log/loggaus*
+Varmista, että ymmärrät seuraavat käsitteeet ja miten niitä käytetään: *komponentti*, *props*, *console.log/loggaus* ja *renderöinti*
 
 Tämän osion tehtäviin on valmiit pohjat kansioissa *helloWorld* ja *kurssitiedot*. Tehtävien kannalta oleellinen tiedosto on nimeltään *App.jsx*. Se löytyy projekti hakemistosta (=kansiosta) *src*-kansiosta. Alta löytyy ohjeet React-sovelluksen käynnistämiseen. 
 
@@ -95,3 +95,20 @@ Samasta tiedostosta löytyy myös sinulle valmiiksi tehty *Part*-komponentti, jo
 
 
 ### Tehtävä 1.4 Kurssitiedot osa 2
+Tässä tehtävässä jatketaan saman kurssitiedot-sovelluksen refaktorointia. Tässä kertaa tavoite on muuttaa *App*-komponentin palauttama JSX-koodi seuraavaan muotoon:
+
+```jsx
+return (
+  <div>
+    <Header course={course} />
+    <Content ... />
+    <Total ... />
+  </div>
+)
+```
+eli siirtää *Part*-komponenttien renderöinti uuden *Content*-komponentin sisään.
+
+1. Tee edelleen samaan tiedostoon uusi komponentti *Content*, joka ottaa kuusi propsia. Propsit ovat kolmen eri kurssin osan nimet ja tehtävien määrät (eli part1, part2... ja exercises1...)
+2. *Content*-komponentin tulee renderöidä kolme *Part*-komponenttia, joista kukin saa propsina yhden kurssin osan tiedot
+3. Muuta *App*-komponenttia siten, että se renderöi kolmen *Part*-komponentin sijaan vain yhden *Content*-komponentin. Varmista, että sivu näyttää selaimessa täysin samalta kuin aiemmin, ja ettei konsolissa näy virheitä.
+4. Tarkista, että *App*-komponenttisi näyttää samalta kuin ylempänä oleva malli. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 1.4
