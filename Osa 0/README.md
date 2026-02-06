@@ -1,16 +1,17 @@
 # Osa 0
 ## Web sovelluksen toimintaperiaatteet
 
+Ennen tehtäviä, tutustu *esimerkki_mermaid_kaavio.md* -tiedostosta löytyvää kaaviota. Vertaa sitä selaimen keihittäjän työkalujen network-välilehdellä näkyviin tapahtumiin. Varmista, että ymmärrät kaaviota.
+
 Tee tehtävät tästä kansiosta valmiiksi löytyviin tiedostoihin ja palauta ne githubiin tekemällä commitin (saat tehdä myös useita committeja). 
 
 ### Tehtävä 0.1 uusi muistiinpano
-Katso *esimerkki_mermaid_kaavio.md* -tiedostosta löytyvää kaaviota. Vertaa sitä selaimen keihittäjän työkalujen network-välilehdellä näkyviin tapahtumiin. Varmista, että ymmärrät kaaviota.
 
-Tehtävässä tehdään vastaavanlainen kaavio, joka kuvaa, mitä tapahtuu tilanteessa, jossa käyttäjä luo uuden muistiinpanon ollessaan sivulla https://studies.cs.helsinki.fi/exampleapp/notes eli kirjoittaa tekstikenttään jotain ja painaa nappia tallenna.
+Tehtävässä tehdään esimerkkiä vastaava kaavio, joka kuvaa, mitä tapahtuu tilanteessa, jossa käyttäjä luo uuden muistiinpanon ollessaan sivulla https://studies.cs.helsinki.fi/exampleapp/notes eli kirjoittaa tekstikenttään jotain ja painaa nappia tallenna.
 
 1. Avaa https://studies.cs.helsinki.fi/exampleapp/notes ja sen jälkeen tyhjennä network-välilehden tapahtumalista. Saat tapahtumalistan tyhjennettyä painamalla kuvan mukaista painiketta:
 
-![Tapahtumien tyhjennys](./src/tyhjenna_network_tapahtumat.png)
+   <img src="./src/tyhjenna_network_tapahtumat.png" width="50%" alt="Tapahtumien tyhjennys" />
 
 2. Luo uusi muistiinpano ja sen jälkeen katso tarkkaan network-välilehdelle ilmestyviä tapahtumia. Kustakin tapahtumasta kannattaa tarkistaa header ja response -osiot.
 
