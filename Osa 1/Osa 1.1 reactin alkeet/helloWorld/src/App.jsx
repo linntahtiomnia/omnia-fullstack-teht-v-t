@@ -1,5 +1,5 @@
 const App = () => {
-  console.log('This will show in the browser console')
+  console.log('Tämä näkyy selaimen konsolissa')
 
   return (
     <div>

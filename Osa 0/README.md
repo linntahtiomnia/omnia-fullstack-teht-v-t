@@ -5,6 +5,7 @@ Ennen tehtäviä, tutustu *esimerkki_mermaid_kaavio.md* -tiedostosta löytyvää
 
 Tee tehtävät tästä kansiosta valmiiksi löytyviin tiedostoihin ja palauta ne githubiin tekemällä commitin (saat tehdä myös useita committeja). 
 
+## Tehtävät:
 ### Tehtävä 0.1 uusi muistiinpano
 
 Tehtävässä tehdään esimerkkiä vastaava kaavio, joka kuvaa, mitä tapahtuu tilanteessa, jossa käyttäjä luo uuden muistiinpanon ollessaan sivulla https://studies.cs.helsinki.fi/exampleapp/notes eli kirjoittaa tekstikenttään jotain ja painaa nappia tallenna.
