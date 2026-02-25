@@ -1,11 +1,33 @@
 import { useState } from 'react'
 
+const Clicks = ({ numberOfClicks }) => {
+  // Jos nappeja ei ole klikattu vielä kertaakaan, näytetään käyttäjälle kehotus klikata nappeja.
+  if (numberOfClicks === 0) {
+    return (
+      <div>
+        <p>Click the buttons to start counting clicks!</p>
+      </div>
+    )
+  }
+
+  // Jos nappeja on klikattu, näytetään käyttäjälle, kuinka monta klikkausta on tapahtunut.
+  return (
+    <div>
+      <p>Number of clicks: {numberOfClicks}</p>
+    </div>
+  )
+}
+
 const App = () => {
   // Määritellään tilamuuttuja value ja funktio setValue, jolla tilaa voidaan muuttaa
   // Määrittely tehdään useState-hookilla, joka saa argumentikseen tilan alkuarvon (tässä tapauksessa 0)
   // Hookit ovat erityisiä funktioita Reactissa, jotka mahdollistavat tilan ja muiden React-ominaisuuksien käytön.
   // Hookeja voidaan käyttää vain funktiokomponenteissa, eikä niitä saa kutsua silmukoiden, ehtolauseiden tai sisäkkäisten funktioiden sisällä.
   const [value, setValue] = useState(0)
+
+  // Määritellään toinen tilamuuttuja numberOfClicks, joka seuraa, 
+  // kuinka monta kertaa nappeja on klikattu.
+  const [numberOfClicks, setNumberOfClicks] = useState(0)
 
   // setToValue on funktio, jota käytetään nappien onClick-tapahtumankäsittelijöissä. 
   // Se ottaa argumentikseen uuden arvon, joka asetetaan tilamuuttujaan value.
@@ -16,6 +38,8 @@ const App = () => {
     // Tilamuuttujaan value asetetaan uusi arvo newValue, joka saadaan funktiokutsusta.
     // Tilan päivittäminen aiheuttaa komponentin uudelleenrenderöinnin, jolloin uusi arvo näkyy selaimessa.
     setValue(newValue)
+    // Jokaisella napin klikkauksella kasvatetaan numberOfClicks-tilamuuttujaa yhdellä, jotta voimme seurata, kuinka monta kertaa nappeja on klikattu.
+    setNumberOfClicks(numberOfClicks + 1)
   }
 
   // Tämä komponentti renderöi otsikon "Counter", tilamuuttujan value ja kolme nappia, 
@@ -28,6 +52,7 @@ const App = () => {
     <>
       <h1>Counter</h1>
       <div>{value}</div>
+      <Clicks numberOfClicks={numberOfClicks} />
       <div>
         <button onClick={() => setToValue(1000)}>
           thousand
