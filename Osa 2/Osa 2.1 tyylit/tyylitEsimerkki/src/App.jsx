@@ -21,11 +21,11 @@ const App = () => {
       <PageContainer>
         <Container>
           <Row>
-            <Column highlighted={highlightLeft}>
+            <Column $highlighted={highlightLeft}>
               <ColumnTitle>Vasen palkki</ColumnTitle>
               <p>Tässä voi olla mitä tahansa sisältöä.</p>
             </Column>
-            <Column highlighted={!highlightLeft}>
+            <Column $highlighted={!highlightLeft}>
               <ColumnTitle>Oikea palkki</ColumnTitle>
               <p>Myös tässä voi olla tekstiä, kuva tms.</p>
             </Column>
@@ -83,7 +83,7 @@ const Column = styled.div`
   padding: 0.75rem;
 
   /* taustaväri riippuu "highlighted"-propista */
-  background: ${({ highlighted }) => (highlighted ? '#b4d2f8' : '#e5e7eb')};
+  background: ${({ $highlighted }) => ($highlighted ? '#b4d2f8' : '#e5e7eb')};
   color: #111827;
 
   display: flex;
