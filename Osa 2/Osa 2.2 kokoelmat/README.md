@@ -5,9 +5,9 @@ Tässä osassa tutustutaan taulukkomenetelmiin. Aloita tutustumalla esimerkkisov
 
 ## Tehtävät
 
-### Tehtävä lisää JavaScriptia
+### Tehtävä 2.6 lisää JavaScriptia
 1. Kansiosta *JavaScriptRakenteet* löytyy JavaScript-tiedosto, jossa on 6 pientä tehtävää. Tee tiedoston tehtävät kommenttien ohjeiden mukaisesti.
-2. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 
+2. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.6
 
 ## Esivalmistelut loppuihin tehtäviin
 Lopuissa tämän osan tehtävissä jatketaan ensimmäisen osan kurssitiedot-projektia.
@@ -15,7 +15,7 @@ Lopuissa tämän osan tehtävissä jatketaan ensimmäisen osan kurssitiedot-proj
 Avaa osan 1.1 kurssitiedot-projektin tiedosto *App.jsx* ja kopioi sen koodi tämän osan kurssitiedot-projektin *App.jsx*-tiedostoon
 
 
-### Tehtävä kurssitiedot osa 6
+### Tehtävä 2.7 kurssitiedot osa 6
 
 1. Kommentoi aikaisempi *App*-komponentti (älä poista sitä vielä!) ja korvaa aikaisempi se alla olevalla koodilla:
     ```jsx
@@ -52,9 +52,9 @@ Avaa osan 1.1 kurssitiedot-projektin tiedosto *App.jsx* ja kopioi sen koodi täm
 2. Lisää uusi komponentti **Course**, joka renderöi komponentit **Header** ja **Content**.
     - **Total**-komponenttia ei tarvitse renderöidä tässä tehtävässä. Älä kuitenkaan poista komponenttia.
 3. Muuta **Content**-komponenttia siten, että se toimii, vaikka lisäät tai poistat kurssista osia. Käytä siis *map*-metodia osien renderöintiin. 
-4. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Voit poistaa vanhan kommentoidun version *App*-komponentista. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 
+4. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Voit poistaa vanhan kommentoidun version *App*-komponentista. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.7
 
-### Tehtävä kurssitiedot osa 7
+### Tehtävä 2.8 kurssitiedot osa 7
 1. Lisää **Course**-komponenttiin **Total**-komponentin renderöinti
 2. Muuta **Total**-komponenttia niin, että tehtävien yhteenlaskettumäärä lasketaan oikein, vaikka lisäät tai poistat osia kurssista. Käytä *reduce*-metodia
     - Kannattaa käyttää console.log apuna hahmottamaan, miten *reduce*-metodi toimii:
@@ -64,9 +64,9 @@ Avaa osan 1.1 kurssitiedot-projektin tiedosto *App.jsx* ja kopioi sen koodi täm
             return //tähän tulee jokin laskutoimitus 
         })
         ```
-3. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 
+3. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.8
 
-### Tehtävä kurssitiedot osa 8
+### Tehtävä 2.9 kurssitiedot osa 8
 Sovellusta muutetaan nyt niin, että kursseja voi olla useita. Sovelluksen tulee näyttää esimerkiksi tältä:
     <img src="./src/kurssitiedot3.png" width="80%" alt="Kurssitiedot screenshot" />
 
@@ -120,9 +120,9 @@ Sovellusta muutetaan nyt niin, että kursseja voi olla useita. Sovelluksen tulee
 2. Korjaa nyt sovellus toimivaksi niin, että se toimii, vaikka kursseja on useita. 
     - Käytä *map*-metodia siihen, että renderöit jokaiselle *courses*-muuttujan taulukossa olevalle kurssi-oliolle oman *Course*-komponentin.
 3. Lisää kurssien tietojen yläpuolelle *h1*-elementti, joka renderöi tekstin "Web development curriculum"
-4. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 
+4. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.9
 
-### Tehtävä kurssitiedot osa 9
+### Tehtävä 2.10 kurssitiedot osa 9
 Nyt koko sovellus on samassa *App.jsx*-tiedostossa. Tämä on epäkäytännöllistä, kun komponentteja on paljon tai ne ovat isoja.
 1. Lisää kurssitiedot-projektin *src*-kansioon uusi kansio *components*
 2. Lisää *components*-kansioon uusi tiedosto *Course.jsx*
@@ -130,4 +130,4 @@ Nyt koko sovellus on samassa *App.jsx*-tiedostossa. Tämä on epäkäytännölli
     - *App.jsx* tiedostoon pitäisi jäädä vain *App*-komponentin koodi
 4. Exportaa *Course*-komponentti uudesta tiedostosta lisäämällä tiedoston loppuun **export default Course**
 5. Importaa *Course*-komponentti *App.jsx*-tiedostossa lisäämällä tiedoston alkuun *import Course from './components/Course'*
-6. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 
+6. Tarkista, että sovellus toimii, eikä konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.10

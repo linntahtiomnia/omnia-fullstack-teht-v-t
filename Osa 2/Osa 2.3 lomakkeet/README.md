@@ -5,7 +5,7 @@ Tässä osassa opetellaan html-lomakkeiden käyttöä ja jatketaan javaScript-ra
 ## Tehtävät
 Kaikki tämän osan tehtävät ovat samaa puhelinluettelo-projektia. Valmis pohja löytyy kansiosta puhelinluettelo.
 
-### Tehtävä puhelinluettelo osa 1
+### Tehtävä 2.11 puhelinluettelo osa 1
 
 1. Lisää sovelluksen lomakkeeseen kenttä, jolla käyttäjä voi lisätä uusia nimiä puhelinluetteloon
     - Huomaa, että persons-tila sisältää olioista muodostuvan taulukon. Uusi nimi pitää siis myös lisätä oliona.
@@ -14,9 +14,9 @@ Kaikki tämän osan tehtävät ovat samaa puhelinluettelo-projektia. Valmis pohj
 3. Testaa, että sovellus toimii ja että se näyttää alla olevan kuvan mukaiselta
 
     <img src="./src/puhelinluetteloss.png" width="100%" alt="puhelinluettelo screenshot" />
-4. Kun sovellus toimii, eikä konsolissa näy virheitä, palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 
+4. Kun sovellus toimii, eikä konsolissa näy virheitä, palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.11
 
-### Tehtävä puhelinluettelo osa 2
+### Tehtävä 2.12 puhelinluettelo osa 2
 
 1. Lisää *addPerson*-tapahtumankäsittelijään virheiden käsittely: jos käyttäjä yrittää lisätä henkilöä, joka löytyy jo puhelinluettelosta, lisäystä ei tehdä.
     - Vinkki: käytä find-metodia
@@ -25,9 +25,9 @@ Kaikki tämän osan tehtävät ovat samaa puhelinluettelo-projektia. Valmis pohj
         ```js 
         `${newName} is already added to phonebook`
         ```
-3. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli
+3. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.12
 
-### Tehtävä puhelinluettelo osa 3
+### Tehtävä 2.13 puhelinluettelo osa 3
 Tässä tehtävässä lisätään sovellukseen mahdollisuus lisätä puhelinluetteloon myös puhelinnumerot.
 
 1. Lisää sovelluksen lomakkeeseen uusi input-elementti, jolla käyttäjä voi antaa puhelinnumeron. Lisää puhelinnumerolle myös oma tila ja tapahtumankäsittelijä.
@@ -36,9 +36,9 @@ Tässä tehtävässä lisätään sovellukseen mahdollisuus lisätä puhelinluet
 
 3. Muuta puhelinluettelon tietojen renderöintiä siten, että sovelluksessa näkyy nimen lisäksi myös puhelinnumero.
 
-4. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli
+4. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.13
 
-### Tehtävä puhelinluettelo osa 4
+### Tehtävä 2.14 puhelinluettelo osa 4
 
 Tässä tehtävässä lisätään sovellukseen mahdollisuus filtteröidä listassa näkyviä henkilöitä nimen avulla. Sovelluksen tulee lopussa näyttää tältä:
     <img src="./src/puhelinluettelo3.png" width="100%" alt="puhelinluettelo screenshot" />
@@ -49,7 +49,7 @@ Tässä tehtävässä lisätään sovellukseen mahdollisuus filtteröidä listas
     - Jos filtteri-kenttä on tyhjä, näytetään kaikki henkilöt
     - Jos filtteri-kentässä on tekstiä, näytetään ne, joiden nimestä löytyy sama teksti.
     - Käytä filter-metodia!
-4. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli
+4. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.14
     - Testausta varten voit alustaa puhelinluettelon tilan näin:
         ```js
          const [persons, setPersons] = useState([
@@ -60,7 +60,7 @@ Tässä tehtävässä lisätään sovellukseen mahdollisuus filtteröidä listas
         ])
         ```
 
-### Tehtävä puhelinluettelo osa 5
+### Tehtävä 2.15 puhelinluettelo osa 5
 Tässä tehtävässä refaktoroidaan puhelinluettelo-sovellusta. Tarkoitus on jakaa sovellus pienempiin komponentteihin. Voit pitää kaikki komponentit samassa *App.jsx*-tiedostossa.
 
 1. Erota sovelluksesta ainakin 3 uutta komponenttia. Pidä kaikki tapahtumankäsittelijät ja tilat edelleen **App**-komponentissa. Kolme uutta komponenttia voivat olla esimerkiksi:
@@ -91,4 +91,4 @@ Tässä tehtävässä refaktoroidaan puhelinluettelo-sovellusta. Tarkoitus on ja
         )
     }
     ```
-3. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli
+3. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.15
