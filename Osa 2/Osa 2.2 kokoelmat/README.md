@@ -1,6 +1,6 @@
 # Osa 2.2
 ## Taulukkomenetelmät
-Tässä osassa tutustutaan taulukkomenetelmiin. Aloita tutustumalla esimerkkisovellukseen *taulukkomenetelmaesimerkki*. Varmista, että ymmärrät seuraavat käsitteet ja tiedät, miten niitä käytetään: *taulukkomenetelmä*, *map-metodi*, *reduce-metodi*.
+Tässä osassa tutustutaan taulukkomenetelmiin. Aloita tutustumalla esimerkkisovellukseen *taulukkomenetelmaesimerkki*. Varmista, että ymmärrät seuraavat käsitteet ja tiedät, miten niitä käytetään: *taulukkomenetelmä*, *map-metodi*, *reduce-metodi*. Kannattaa tutustua myös JavaScript taulukkomenetelmien dokumentaatioon googlen avulla.
 
 
 ## Tehtävät
