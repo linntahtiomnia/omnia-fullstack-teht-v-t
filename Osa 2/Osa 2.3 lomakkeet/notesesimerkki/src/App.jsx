@@ -30,7 +30,7 @@ const App = () => {
   const [showAll, setShowAll] = useState(true) // Tila, joka määrittää, näytetäänkö kaikki muistiinpanot vai ei.
 
   const addNote = (event) => {
-    // Tapahtumankäsittelijä muistiinpanon lisäämiseen.
+    // Tapahtumankäsittelijä muistiinpanon lisäämiseen. Eli lomakkeen tapahtumankäsittelijä.
     // event.preventDefault() estää lomakkeen oletustoiminnon, joka olisi sivun uudelleenlataus.
     event.preventDefault()
     // Luodaan uusi muistiinpano-olio, joka sisältää input-kentän tekstin content-kentässä,

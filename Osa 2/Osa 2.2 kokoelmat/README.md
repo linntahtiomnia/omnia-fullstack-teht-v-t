@@ -2,11 +2,17 @@
 ## Taulukkomenetelmät
 Tässä osassa tutustutaan taulukkomenetelmiin. Aloita tutustumalla esimerkkisovellukseen *taulukkomenetelmaesimerkki*. Varmista, että ymmärrät seuraavat käsitteet ja tiedät, miten niitä käytetään: *taulukkomenetelmä*, *map-metodi*, *reduce-metodi*.
 
-## Esivalmistelut
-Avaa osan 1.1 kurssitiedot-projektin tiedosto *App.jsx* ja kopioi sen koodi tämän osan kurssitiedot-projektin *App.jsx*-tiedostoon
 
 ## Tehtävät
-Tehtävässä jatketaan edelleen kurssitiedot-projektin refaktorointia siten, että kurssin osien tai kurssien määrän ei tarvitse olla aina sama.
+
+### Tehtävä lisää JavaScriptia
+1. Kansiosta *JavaScriptRakenteet* löytyy JavaScript-tiedosto, jossa on 6 pientä tehtävää. Tee tiedoston tehtävät kommenttien ohjeiden mukaisesti.
+2. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 
+
+## Esivalmistelut loppuihin tehtäviin
+Lopuissa tämän osan tehtävissä jatketaan ensimmäisen osan kurssitiedot-projektia.
+
+Avaa osan 1.1 kurssitiedot-projektin tiedosto *App.jsx* ja kopioi sen koodi tämän osan kurssitiedot-projektin *App.jsx*-tiedostoon
 
 
 ### Tehtävä kurssitiedot osa 6

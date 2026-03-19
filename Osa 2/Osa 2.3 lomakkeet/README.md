@@ -1,7 +1,6 @@
 # Osa 2.3
 ## Lomakkeet
-
-
+Tässä osassa opetellaan html-lomakkeiden käyttöä ja jatketaan javaScript-rakenteiden harjoittelua. Tutustu *notesesimerkki*-projektiin. Varmista, että ymmärrät seuraavat käsitteet ja tiedät, miten niitä käytetään: *lomake eli form*, *input-kenttä*, *input-kentän onChange-attribuutti*, *lomakkeen tapahtumankäsittelijä*.
 
 ## Tehtävät
 Kaikki tämän osan tehtävät ovat samaa puhelinluettelo-projektia. Valmis pohja löytyy kansiosta puhelinluettelo.
