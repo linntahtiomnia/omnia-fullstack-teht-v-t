@@ -1,0 +1,46 @@
+name: Autograding 1.1 Reactin alkeet
+
+on:
+  push:
+    paths:
+      - 'Osa 1/Osa 1.1 reactin alkeet/**'
+  pull_request:
+    paths:
+      - 'Osa 1/Osa 1.1 reactin alkeet/**'
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install HelloWorld deps
+        run: npm install
+        working-directory: Osa 1/Osa 1.1 reactin alkeet/helloWorld
+      - name: HelloWorld tests
+        id: hello
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: 'HelloWorld'
+          command: cd 'Osa 1/Osa 1.1 reactin alkeet/helloWorld' && npx vitest run --run
+          timeout: 10
+          max-score: 30
+
+      - name: Install Kurssitiedot deps
+        run: npm install
+        working-directory: Osa 1/Osa 1.1 reactin alkeet/kurssitiedot
+      - name: Kurssitiedot tests
+        id: kurssi
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: 'Kurssitiedot'
+          command: cd 'Osa 1/Osa 1.1 reactin alkeet/kurssitiedot' && npx vitest run --run
+          timeout: 10
+          max-score: 70
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          HELLO_RESULTS: '${{ steps.hello.outputs.result }}'
+          KURSSI_RESULTS: '${{ steps.kurssi.outputs.result }}'
+        with:
+          runners: hello,kurssi
