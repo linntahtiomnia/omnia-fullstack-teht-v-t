@@ -1,6 +1,6 @@
 # Osa 2.4
 ## json-palvelin
-
+Tässä osassa tutustutaan palvelimen kanssa kommunikointiin käyttäen apuna json-palvelinta. Kansiosta löytyy kaksi esimerkkiprojektia: *notesesimerkki1* ja *notesesimerkki2*. *notesesimerkki1* sisältö vastaa tehtävissä 2.16 ja 2.17 tarvittavia asioita. *notesesimerkki2* sisältö vastaa loppuja tehtäviä. Muista katsoa myös *components* ja *services* -kansioiden tiedostot. Varmista, että ymmärrät seuraavat käsitteet ja tiedät, miten niitä käytetään: *useEffect*, *json-server*, *axios*, *promise*, *then-lohko*, *catch-lohko*, *response-olio*. Varmista myös, että ymmärrät, miten palvelimella tehdyt muutokset täytyy päivittää käyttöliittymässä erikseen.
 
 ## Tehtävät
 
@@ -98,4 +98,26 @@ Tässä tehtävässä lisätään mahdollisuus poistaa tietoja puhelinluettelost
 Tässä tehtävässä lisätään mahdollisuus muuttaa puhelinluettelosta löytyvän henkilön tietoja. Jos käyttäjä yrittää lisätä tietoja henkilölle, joka on jo puhelinluettelossa, näytetään window.confirm-metodilla tehty ilmoitus. Käyttäjä voi valita, haluaako hän muuttaa henkilön tietoja vai peruuttaa pyynnön.
     <img src="./src/puhelinluettelo10.png" width="100%" alt="puhelinluettelo screenshot" />
 
-1. 
+1. Lisää *personService*en (eli *persons.js*-tiedostoon) uusi funktio, jolla voidaan muokata yksittäistä puhelinluettelotietoa.
+    - Funktio ottaa parametrina id:n ja puhelinluettelo-olion ja tekee HTTP PUT-pyynnön osoitteeseen **`${baseUrl}/${id}`**
+    - Muista exportata funktio!
+    - Anna funktion nimeksi esim. *update*
+2. Muuta lomakkeen tapahtumankäsittelijää *addPerson* siten, että jos henkilö löytyy jo puhelinluettelosta, käyttäjälle näytetään window.confirm-metodilla tehty ilmoitus, jossa käyttäjä voi perua toiminnon tai vahvistaa haluavansa muuttaa tietoja. Jos käyttäjä klikkaa ok, se kutsuu *personService*n *update*-funktiota, ja muuttaa id:n mukaisen henkilön tiedot *persons*-tilasta, jos pyyntö on onnistunut.
+    - Huomaa, että *update*-funktio tarvitsee parametriksi kokonaisen *personObject*-olion
+    -Päivitä *persons*-tilaan taas palvelimen palauttama olio äläkä itse tekemääsi oliota
+3. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.20
+
+### Tehtävä 2.21 puhelinluettelo osa 11
+1. Lisää sovellukseen alla olevan kuvan mukainen ilmoitus, joka tulee näkyviin, kun käyttäjä on onnistuneesti lisännyt, poistanut, tai muokannut puhelinluettelontietoja. Ilmoituksen tulee näkyä 5 sekunnin ajan.
+    <img src="./src/puhelinluettelo11.png" width="100%" alt="puhelinluettelo screenshot" />
+    - Voit käyttää apuna notesesimerkki2-projektin *Notification*-komponenttia
+    - Vinkki: then-lohkon koodi suoritetaan vasta onnistuneen operaation jälkeen
+2. Lisää vastaava virheilmoitus epäonnistuneille operaatioille:
+    <img src="./src/puhelinluettelo12.png" width="100%" alt="puhelinluettelo screenshot" />
+    - Vinkki: parametrisoi ilmoituksen muotoilu, voit käyttää samaa komponenttia kuin onnistuneen operaation ilmoitukseen, vaihda vain väri propsina annetun parametrin mukaan.
+    - Vinkki: käytä catch-lohkoa
+3. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.21
+
+
+### Bonustehtävä 2.22
+Tee [täältä](https://fullstackopen.com/osa2/tyylien_lisaaminen_react_sovellukseen#tehtavat-2-18-2-20) löytyvät tehtävät 2.18 ja 2.19 (halutessasi voit tehdä myös 2.20, joka vaatii rekisteröitymistä sää-API:n). Voit palauttaa tämän yhtenä committina laittamalla commit viestiin tehtävän numeron eli 2.22

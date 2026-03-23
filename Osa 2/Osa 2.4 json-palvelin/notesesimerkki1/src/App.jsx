@@ -11,6 +11,8 @@ const App = () => {
     // Tämä funktio suoritetaan vain kerran, kun komponentti renderöidään ensimmäisen kerran.
     console.log('effect')
     // Axios hakee palvelimelta muistiinpanot ja asettaa ne tilamuuttujaan.
+    // Axiosin get-metodi palauttaa promisen, joten käytämme then-metodia, joka suoritetaan, 
+    // kun data on saatu palvelimelta.
     axios.get('http://localhost:3001/notes').then((response) => {
       console.log('promise fulfilled')
       // response.data sisältää palvelimelta palautuneet muistiinpanot.
@@ -30,6 +32,7 @@ const App = () => {
     }
 
     // Axios tekee palvelimelle POST-pyynnön, joka lisää palvelimelle uuden muistiinpanon.
+    // Axiosin post-metodi palauttaa promisen, joka täyttyy, kun palvelin on käsitellyt pyynnön ja palauttanut vastauksen.
     axios.post('http://localhost:3001/notes', noteObject).then((response) => {
       // response.data sisältää palvelimelta palautuneen uuden muistiinpanon, 
       // joka sisältää myös palvelimen luoman id:n.
