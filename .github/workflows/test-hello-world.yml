@@ -1,0 +1,39 @@
+name: Autograding 1.1 Hello World
+
+on:
+  push:
+    paths:
+      - 'Osa 1/Osa 1.1 reactin alkeet/helloWorld/**'
+  pull_request:
+    paths:
+      - 'Osa 1/Osa 1.1 reactin alkeet/helloWorld/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    - name: Install dependencies
+      run: npm install
+      working-directory: Osa 1/Osa 1.1 reactin alkeet/helloWorld
+    - name: Osa 1 Hello World testit
+      id: osa-1-helloworld-testit
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Osa 1 Hello World
+        setup-command: ''
+        command: npm test -- --run
+        working-directory: Osa 1/Osa 1.1 reactin alkeet/helloWorld
+        timeout: 10
+        max-score: 2
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        OSA-1-HELLOWORLD-TESTIT_RESULTS: "${{steps.osa-1-helloworld-testit.outputs.result}}"
+      with:
+        runners: osa-1-helloworld-testit

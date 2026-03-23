@@ -1,0 +1,39 @@
+name: Autograding 1.1 Kurssitiedot
+
+on:
+  push:
+    paths:
+      - 'Osa 1/Osa 1.1 reactin alkeet/kurssitiedot/**'
+  pull_request:
+    paths:
+      - 'Osa 1/Osa 1.1 reactin alkeet/kurssitiedot/**'
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    - name: Install dependencies
+      run: npm install
+      working-directory: Osa 1/Osa 1.1 reactin alkeet/kurssitiedot
+    - name: Osa 1 Kurssitiedot testit
+      id: osa-1-kurssitiedot-testit
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Osa 1 Kurssitiedot
+        setup-command: ''
+        command: npm test -- --run
+        working-directory: Osa 1/Osa 1.1 reactin alkeet/kurssitiedot
+        timeout: 10
+        max-score: 2
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        OSA-1-KURSSITIETO-TESTIT_RESULTS: "${{steps.osa-1-kurssitiedot-testit.outputs.result}}"
+      with:
+        runners: osa-1-kurssitiedot-testit
