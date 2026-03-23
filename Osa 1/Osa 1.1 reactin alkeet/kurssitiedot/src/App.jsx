@@ -37,3 +37,5 @@ const App = () => {
 }
 
 export default App
+// export { Part, Header, Total }
+// export { Content }
