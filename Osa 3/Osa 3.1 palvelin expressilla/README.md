@@ -1,5 +1,6 @@
 # Osa 3.1
 ## Palvelin expressilla
+Tässä osassa tutustutaan palvelimen ohjelmointiin express-kirjastolla. Osan kansiosta löytyy esimerkkisovellus kansiosta *esimerkkibackend*. Pystyt käynnistämään sovelluksen suorittamalla kansiossa ensin komennon **npm i** ja sitten **npm run dev**. Kokeile lähettää pyyntöjä esimerkiksi REST clientilla. Voit myös kokeilla muuttaa koodia ja katsoa, mitä tapahtuu. Varmista, että tiedät seuraavat käsitteet sekä miten niitä käytetään: *route*, *url-parametri*, *HTTP-pyyntö*, *statuskoodi*, *json*, *request ja response -oliot*
 
 
 ## Tehtävät

@@ -1,4 +1,6 @@
+// importataan express-kirjasto require-funktiolla.
 const express = require('express')
+// Luodaan uusi express-sovellus kutsumalla express-funktiota.
 const app = express()
 
 // Muistiinpanot, jotka tallennetaan muistiin taulukkomuodossa. Jokaisella muistiinpanolla on id, content ja important kentät.
