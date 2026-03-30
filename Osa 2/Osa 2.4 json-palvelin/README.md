@@ -117,6 +117,7 @@ Tässä tehtävässä lisätään mahdollisuus muuttaa puhelinluettelosta löyty
     - Vinkki: parametrisoi ilmoituksen muotoilu, voit käyttää samaa komponenttia kuin onnistuneen operaation ilmoitukseen, vaihda vain väri propsina annetun parametrin mukaan.
     - Vinkki: käytä catch-lohkoa
 3. Testaa, että sovellus toimii ja varmista, ettei konsolissa näy virheitä. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 2.21
+    - Testaa virheilmoituksia näin: avaa sovellus kahdessa selain ikkunassa. Poista henkilö puhelinluettelosta ikkunassa A. Avaa ikkuna B ja yritä poistaa sama henkilö uudelleen. Tämän pitäisi aiheuttaa virhe.
 
 
 ### Bonustehtävä 2.22
