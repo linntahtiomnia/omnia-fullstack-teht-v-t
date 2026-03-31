@@ -33,7 +33,7 @@ Käytä tehtävissä pgAdmin työkalua ja tallenna kaikki komennot *komennot.sql
 4. *komennot.sql*-tiedostossa pitäisi olla nyt ainakin 4 SQL-komentoa. Palauta tehtävä tekemällä commit, joka sisältää *komennot.sql*-tiedoston. Älä palauta tietokannan tiedostoja. Lisää commit-viestiin tehtävän numero, eli 3.10
 5. Voit halutessasi kokeilla myös muita SQL-komentoja tietokantaan, kuten valita tietyt rivit, muokata jotain riviä jne. Näitä komentoja ei tarvitse laittaa *komennot.sql*-tiedostoon.
 
-### Tehtävä 3.11 tietokansa osa 3
+### Tehtävä 3.11 tietokanta osa 3
 Tehtävässä tehdään yksinkertainen JavaScript koodi, joka avaa yhteyden tietokantaasi ja tulostaa persons-taulusta löytyvät tiedot konsoliin.
 1. Lisää kansioon *tietokantatehtävä* uusi tiedosto *.env* ja kopioi sinne seuraava rivi, johon muutat merkittyyn kohtaan aiemmin määrittelemäsi tietokannan salasanan:
     ```js
