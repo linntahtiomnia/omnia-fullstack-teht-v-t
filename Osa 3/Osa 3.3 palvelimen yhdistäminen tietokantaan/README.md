@@ -4,7 +4,7 @@ Tässä osassa palataan varsinaiseen palvelimen ohjelmointiin. Nyt aiemman osan 
 
 Osan kansiosta löytyy kaksi esimerkkisovellusta. Ensimmäinen esimerkki on kansiossa *esimerkkiBackendTietokannalla* ja se vastaa tehtäviä 3.12-3.18. Varsinainen sovelluskoodi on *index.js*-tiedostossa. Sovelluksen testausta varten *request*-kansiosta löytyy valmiita rest-tiedostoja, joilla voit lisätä, muokata ja poistaa muistiinpanoja palvelimelta. Tutustu esimerkkisovellukseen ja testaa sen ominaisuuksia. Varmista, että ymmärrät seuraavat asiat: *tietokantamalli*, *sequalizen metodit init ja sync*, *sequelizen metodit findAll, findByPk, create, destroy, update*, *virheidenkäsittely middleware*.
 
-Toinen esimerkkisovellus on kansiossa *esimerkkiBackendTietokannalla2* ja se vastaa loppuja tämän osan tehtäviä. Kannattaa ensin tehdä tehtävät 3.12-3.16 ja sitten vasta tutustua toiseen esimerkkisovellukseen. Tässä esimerkissä tietokantaan liittyvät määrittelyt on siirretty omaan moduuliin, joka löytyy *models*-kansiosta. Myös itse määritellyt middlewaret on siirretyy omaan tiedostoonsa *utils*-kansioon. *middleware.js*-tiedoston koodi on kopioitu suoraan *index.js*-tiedostosta. *notes.js*-tiedostoon on tehty pieni lisäys tietokantamallin validaatioihin. Tutustu mallinmäärittelyyn tarkkaan. Toiseen esimerkkiin on lisätty myös EsLint-koodin tarkistus.
+Toinen esimerkkisovellus on kansiossa *esimerkkiBackendTietokannalla2* ja se vastaa loppuja tämän osan tehtäviä. Kannattaa ensin tehdä tehtävät 3.12-3.16 ja sitten vasta tutustua toiseen esimerkkisovellukseen. Tässä esimerkissä tietokantaan liittyvät määrittelyt on siirretty omaan moduuliin, joka löytyy *models*-kansiosta. Myös itse määritellyt middlewaret on siirretyy omaan tiedostoonsa *utils*-kansioon. *middleware.js*-tiedoston koodi on kopioitu suoraan *index.js*-tiedostosta. *notes.js*-tiedostoon on tehty pieni lisäys tietokantamallin validaatioihin. Tutustu mallinmäärittelyyn tarkkaan. Toiseen esimerkkiin on lisätty myös EsLint-koodin tarkistus. Tutustu lintterin toimintaan ja eslint-konfiguraatioon, joka löytyy tiedostosta *eslint.config.mjs*
 
 ### Esimerkkisovelluksen käynnistys
 1. Varmista, että tietokantasi on käynnissä
@@ -160,3 +160,10 @@ Tässä tehtävässä sovellukseen lisätään *lintteri*
     - Virheitä on todennäköisesti paljon, koska vs code laittaa uusien tiedostojen rivin "end of line" valinnaksi oletuksena CRLF mutta haluamme käyttää LF:ää, sillä CRLF ei toimi kaikilla käyttöjärjestelmillä. Avoimen tiedoston "end of line"-merkin voi vauhtaa vs coden alareunasta. Voit myös googlata, miten saat oletus rivin lopetus merkin vaihdettua.
     - Myös sinun sisennysten koko voi olla oletuksellisesti eri, kuin ylläoleva lintter konfiguraatio olettaa. Tämä voi olla hankala korjata olemassa olevista tiedostoista, eli pyydä tarvittaessa apua!
 7. Kun olet korjannut koodin, palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 3.22
+
+### Bonustehtävä 3.23 lintteri
+Tätä tehtävää ei palauteta.
+1. Asenna vs codeen *eslint* -extension. Tämä lisäosa merkkaa linttausvirheet koodissa punaisella, jotta huomaat ne heti.
+2. Tarkista vs coden autoformatterin asetukset, ja muuta ne sopiviksi. Kannattaa asettaa formattointi tallennuksen yhteydessä päälle.
+    - Asetukset löytyvät File -> preferences -> settings
+    - Asetuksissa kannattaa käyttää haku ominaisuutta, esim format sanalla löytyy autoformatteriin liittyvät asetukset, indentation löytyy sisennyksien asetukset jne.
