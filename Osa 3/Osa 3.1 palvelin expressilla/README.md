@@ -95,3 +95,21 @@ Lisätään sovellukseen middware [morgan](https://github.com/expressjs/morgan),
     - Saatat tarvita näitä: [creating new tokens](https://github.com/expressjs/morgan#creating-new-tokens), [JSON.stringify](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
     -Huom tämä tehtävä voi olla aika hankala, ei kannata käyttää tämän yrittämiseen liikaa aikaa :)
 2. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 3.7
+
+### Tehtävä 3.8 puhelinluettelo backend osa 8
+Yhdistämme nyt tämän backendin edellisen osan puhelinluettelo frontendiin.
+#### Esivalmistelut:
+1. Kopioi osan 2.4 puhelinluettelo-kansio tämän osan 3.1 kansioon
+2. Poista uudesta puhelinluettelo-kansiosata *node_modules*-kansio
+3. Navigoi terminaalissa uuteen puhelinluettelo-kansioon ja suorita komento **npm i**
+
+#### Tehtävä
+1. Käynnistä puhelinluettelon backend ja frontend sovellukset samaan aikaan
+2. Muuta frontendin *personservise.js*-tiedostossa määriteltyä *baseurl*-muuttujaa siten, että se vastaa backend-sovelluksessa määritelty palvelimen osoitetta
+3. Jos kokeilet nyt päivittää sovelluksen sivun selaimessa, näet todennäköisesti virheen konsolissa. Tämä on niin sanottu CORS virhe, josta voit lukea lisää [wikipediasta](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Korjaa virhe asentamalla ja ottamalla käyttöön cors-middleware:
+    1. Keskeytä backend-sovelluksen suoritus (ctrl+C)
+    2. Asenna cors komennolla **npm i cors**
+    3. Ota cors käyttöön *index.js*-tiedostossa lisäämällä tiedoston alkuun **const cors = require('cors')** ja ottamalla middleware käyttöön komennolla **app.use(cors())** ennen routejen määrittelyä.
+    4. Käynnistä backend-sovellus uudelleen
+4. Frontend-sovelluksessa pitäisi nyt toimia kaikki paitsi henkilön tietojen muokkaus. Tarkista, että voit lisätä ja poistaa henkilön, ja että näet samat henkilöt, kun päivität selainikkunan. Tarkista myös, että selaimen konsolissa ei näy virheitä, jos et tarkoituksella aiheuta virhetilannetta. Testaa myös virhetilanteet.
+5. Palauta tehtävä tekemällä commit. Lisää commit-viestiin tehtävän numero, eli 3.8
