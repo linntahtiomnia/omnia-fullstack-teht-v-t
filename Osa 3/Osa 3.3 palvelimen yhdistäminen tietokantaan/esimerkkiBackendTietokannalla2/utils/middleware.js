@@ -8,17 +8,17 @@ const unknownEndpoint = (request, response) => {
 
 // Middleware, joka käsittelee sovelluksessa tapahtuneet virheet.
 const errorHandler = (error, request, response, next) => {
-    // alla oleva rivi aiheuttaa lintterissä virheen, sillä rivin lopussa on ylimääräisiä välilyöntejä.
-  console.error(error.message)   
+  // alla oleva rivi aiheuttaa lintterissä virheen, sillä rivin lopussa on ylimääräisiä välilyöntejä.
+  console.error(error.message)
 
-  // CastError-virhe syntyy, kun yritetään hakea muistiinpanoa, jonka id ei ole kelvollinen.
-  if (error.name === 'CastError') {
-    return response.status(400).send({error: 'malformatted id'})
+  // SequelizeDatabaseError-virhe syntyy, kun yritetään hakea muistiinpanoa, jonka id ei ole kelvollinen.
+  if (error.name === 'SequelizeDatabaseError') {
+    return response.status(400).send({ error: 'malformatted id' })
   }
   // SequelizeValidationError-virhe syntyy, kun yritetään luoda tai päivittää muistiinpanoa, 
   // joka ei täytä Note-mallin määrittelemää rakennetta.
   if (error.name == 'SequelizeValidationError') { // Tällä rivillä lintter valittaa vertailuoperaattorista. Yhtäsuuruusmerkkejä pitäisi olla 3.
-       return response.status(400).json({ error: error.message }) // lintteri valittaa tästä rivistä, koska sisennys on väärän kokoinen
+    return response.status(400).json({ error: error.message }) // lintteri valittaa tästä rivistä, koska sisennys on väärän kokoinen
   }
 
   next(error)
@@ -27,5 +27,5 @@ const errorHandler = (error, request, response, next) => {
 // exportataan middlewaret, jotta ne voidaan ottaa käyttöön muissa tiedostoissa, kuten index.js:ssä.
 exports.module = {
   unknownEndpoint,
-errorHandler // lintteri valittaa myös tästä rivistä, koska sisennystä ei ole.
+  errorHandler // lintteri valittaa myös tästä rivistä, koska sisennystä ei ole.
 }
