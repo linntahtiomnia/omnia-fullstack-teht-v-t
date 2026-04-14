@@ -1,12 +1,20 @@
 const notesRouter = require('express').Router()
 const Note = require('../models/index')
 
+/*
 notesRouter.get('/', (request, response) => {
   Note.findAll().then((notes) => {
     response.json(notes)
   })
 })
+*/
 
+notesRouter.get('/', async (request, response) => {
+  const notes = await Note.findAll()
+  response.json(notes)
+})
+
+/*
 notesRouter.get('/:id', (request, response, next) => {
   Note.findByPk(request.params.id)
     .then((note) => {
@@ -18,6 +26,22 @@ notesRouter.get('/:id', (request, response, next) => {
     })
     .catch((error) => next(error))
 })
+*/
+
+notesRouter.get('/:id', async (request, response, next) => {
+  try {
+    const note = await Note.findByPk(request.params.id)
+    if (note) {
+      response.json(note)
+    } else {
+      response.status(404).end()
+    }
+  } catch (error) {
+    next(error)
+  }
+}
+)
+
 
 notesRouter.post('/', (request, response, next) => {
   const body = request.body

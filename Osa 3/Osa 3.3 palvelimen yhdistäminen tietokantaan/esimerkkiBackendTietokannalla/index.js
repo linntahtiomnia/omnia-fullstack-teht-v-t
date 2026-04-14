@@ -9,37 +9,37 @@ const app = express()
 
 // Luodaan uusi Sequelize-instanssi, joka yhdistää sovelluksen tietokantaan.
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false
-    }
-  },
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    },
 });
 
 // Määritellään Note-malli, joka kuvaa notes-taulukon rakennetta tietokannassa.
-class Note extends Model {}
+class Note extends Model { }
 Note.init({
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  content: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  },
-  important: {
-    type: DataTypes.BOOLEAN
-  },
-  date: {
-    type: DataTypes.DATE
-  }
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    content: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    important: {
+        type: DataTypes.BOOLEAN
+    },
+    date: {
+        type: DataTypes.DATE
+    }
 }, {
-  sequelize,
-  underscored: true,
-  timestamps: false,
-  modelName: 'note'
+    sequelize,
+    underscored: true,
+    timestamps: false,
+    modelName: 'note'
 })
 // Synkronoidaan Note-malli tietokantaan. 
 // Tämä luo notes-taulukon tietokantaan, jos sitä ei vielä ole.
@@ -92,7 +92,7 @@ app.post('/api/notes', (request, response) => {
     // koska se lisätään automaattisesti tietokannassa autoIncrement-ominaisuuden ansiosta.
     // Sen sijaan määrittelemme date-kentän, joka saa arvokseen uuden Date-olion, joka kuvaa nykyhetkeä.
     // Kaikki muut kentät saadaan HTTP-pyynnön mukana lähetetystä datasta.
-    Note.create({...body, date: new Date()})
+    Note.create({ ...body, date: new Date() })
         .then(note => {
             // Kun uusi muistiinpano on luotu, sovellus vastaa sen JSON-muodossa.
             response.json(note)
@@ -163,7 +163,7 @@ app.put('/api/notes/:id', (request, response) => {
 
 // Middleware, joka käsittelee olemattomien osoitteiden pyynnöt.
 const unknownEndpoint = (request, response) => {
-  response.status(404).send({ error: 'unknown endpoint' })
+    response.status(404).send({ error: 'unknown endpoint' })
 }
 
 // Otetaan itse tehty middleware käyttöön.
@@ -172,19 +172,19 @@ app.use(unknownEndpoint)
 
 // Middleware, joka käsittelee sovelluksessa tapahtuneet virheet.
 const errorHandler = (error, request, response, next) => {
-  console.error(error.message)
+    console.error(error.message)
 
-  // CastError-virhe syntyy, kun yritetään hakea muistiinpanoa, jonka id ei ole kelvollinen.
-  if (error.name === 'CastError') {
-    return response.status(400).send({ error: 'malformatted id' })
-  }
-  // SequelizeValidationError-virhe syntyy, kun yritetään luoda tai päivittää muistiinpanoa, 
-  // joka ei täytä Note-mallin määrittelemää rakennetta.
-  if (error.name === 'SequelizeValidationError') {
-    return response.status(400).json({ error: error.message })
-  }
+    // SequelizeDatabaseError-virhe syntyy, kun yritetään hakea muistiinpanoa, jonka id ei ole kelvollinen.
+    if (error.name === 'SequelizeDatabaseError') {
+        return response.status(400).send({ error: 'malformatted id' })
+    }
+    // SequelizeValidationError-virhe syntyy, kun yritetään luoda tai päivittää muistiinpanoa, 
+    // joka ei täytä Note-mallin määrittelemää rakennetta.
+    if (error.name === 'SequelizeValidationError') {
+        return response.status(400).json({ error: error.message })
+    }
 
-  next(error)
+    next(error)
 }
 
 // Otetaan itse tehty errorHandler-middleware käyttöön. 
