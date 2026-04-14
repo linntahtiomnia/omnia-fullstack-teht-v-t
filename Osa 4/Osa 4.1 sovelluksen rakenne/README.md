@@ -7,6 +7,7 @@ Tässä osassa tutustutaan sovelluksen rakenteeseen, ja ohjelmoidaan palvelin an
 │   └── notes.js
 ├── models
 │   └── note.js
+│   └── index.js
 ├── utils
 │   ├── config.js
 │   ├── logger.js

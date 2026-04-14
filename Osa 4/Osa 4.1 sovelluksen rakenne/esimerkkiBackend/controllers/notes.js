@@ -4,7 +4,7 @@
   Sovelluksen alussa importataan Router-olio sekä Note-tietokantamalli.
 */
 const notesRouter = require('express').Router()
-const { Note } = require('../models/note')
+const Note = require('../models/index')
 
 // Huomaa, miten polun paikalla on vain kenoviiva /. Tämä johtuu siitä, että tämän controllerin polku api/notes
 // on määritetty app.js-tiedostossa, eikä sitä tarvitse toistaa täällä.

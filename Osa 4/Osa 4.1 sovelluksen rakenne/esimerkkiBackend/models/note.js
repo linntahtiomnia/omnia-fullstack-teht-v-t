@@ -38,4 +38,4 @@ Note.init({
   modelName: 'note'
 })
 
-module.exports = { Note }
+module.exports = Note

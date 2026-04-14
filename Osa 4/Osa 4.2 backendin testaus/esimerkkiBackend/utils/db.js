@@ -16,6 +16,10 @@ const connectToDatabase = () => {
       .then(() => {
         console.log('connected to the database')
       })
+    sequelize.sync()
+      .then(() => {
+        console.log('synchronized the database')
+      })
   } catch {
     console.log('failed to connect to the database')
     return process.exit(1)
