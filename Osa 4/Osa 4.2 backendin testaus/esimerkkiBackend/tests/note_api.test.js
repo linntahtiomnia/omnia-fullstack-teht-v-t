@@ -1,6 +1,7 @@
 /*
 Tämä tiedosto sisältää testit muistiinpanojen REST API:lle.
 Testit on kirjoitettu Node.js:n omalla testauskirjastolla, ja käyttäen supertest-kirjastoa HTTP-pyyntöjen tekemiseen.
+Huomaa, miten testit käyttävät async/await-rakennetta promisejen käsittelyyn.
 */
 const assert = require('node:assert')
 const { test, after, before, beforeEach } = require('node:test')
