@@ -2,6 +2,7 @@ const notesRouter = require('express').Router()
 const Note = require('../models/index')
 
 /*
+// Tämä route käyttää then-lohkoa promisen kanssa
 notesRouter.get('/', (request, response) => {
   Note.findAll().then((notes) => {
     response.json(notes)
@@ -9,7 +10,11 @@ notesRouter.get('/', (request, response) => {
 })
 */
 
+// Tämä route tekee täysin saman kuin yllä oleva kommentoitu route, mutta käyttää async/await rakennetta.
 notesRouter.get('/', async (request, response) => {
+  // await -komento kertoo tietokoneelle, että sitä seuraava funktio palauttaa promisen.
+  // Ohjelman suoritus jää odottamaan, että promise on valmis ja palauttaa funktion palautusarvon.
+  // Tässä tapauksessa await Note.findAll() palauttaa kaikki tietokannasta löytyvät muistiinpanot.
   const notes = await Note.findAll()
   response.json(notes)
 })
